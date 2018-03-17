@@ -162,7 +162,6 @@ ALTER TABLE `customer_token`
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `fg_orders_to_customer` (`customer_id`),
   ADD KEY `fg_orders_to_status` (`status_id`);
 
 --
@@ -239,7 +238,6 @@ ALTER TABLE `customer_token`
 -- Limitadores para a tabela `orders`
 --
 ALTER TABLE `orders`
-  ADD CONSTRAINT `fg_orders_to_customer` FOREIGN KEY (`customer_id`) REFERENCES `customer` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `fg_orders_to_status` FOREIGN KEY (`status_id`) REFERENCES `status` (`id`) ON DELETE CASCADE;
 
 --
